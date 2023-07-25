@@ -30,12 +30,14 @@ For an example, an event in event.json file is as follows-
     }
   ]
 
-- python .\event_converter.py 
+### Start here: 
+
+- `python .\event_converter.py` 
 
 Execute the following command to put event on EventBridge-
 
 
-- aws events put-events --entries file://event.json --profile demo 
+- `aws events put-events --entries file://event.json --profile demo` 
 
 
 
