@@ -102,7 +102,7 @@ export class EcsConstruct extends Construct{
 
     // Create container from local `Dockerfile`
     const appContainer = fargateTaskDefinition.addContainer("Container", {
-      image: ContainerImage.fromAsset("../../python-sqs-app"), 
+      image: ContainerImage.fromAsset("./python-sqs-app"), 
       environment: {
           queueUrl: props.queue.queueUrl,
           region: region,
