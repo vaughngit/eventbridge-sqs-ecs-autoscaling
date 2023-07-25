@@ -1,0 +1,8 @@
+[
+    {
+        "EventBusName": "test-bus-cdk",
+        "Source": "eb-sqs-ecs",
+        "DetailType": "message-for-queue",
+        "Detail": "{\"sender\": \"sesregisteredmail@demo.com\", \"recipient\": \"testuser+sestesting@example.com\", \"subject\": \"Test within source object\", \"body\": \"Hello World Object converter!\"}"
+    }
+]
