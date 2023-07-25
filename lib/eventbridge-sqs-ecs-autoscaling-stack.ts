@@ -3,6 +3,7 @@ import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { SqSConstruct } from './constructs/sqs-construct';
 import { EventBridgeConstruct } from './constructs/eventbridge-construct';
+import {EcsConstruct} from './constructs/ecs-construct'
 
 
 export interface IStackProps extends StackProps{
@@ -19,5 +20,7 @@ export class EventbridgeSqsEcsAutoscalingStack extends Stack {
 
     const {queue} = new SqSConstruct(this, "createSQSQueue", props)
     new EventBridgeConstruct(this, "createEventBridge", {...props, queue })
+
+    new EcsConstruct(this, 'createEcsAutoscaler', {queue, ...props})
   }
 }
